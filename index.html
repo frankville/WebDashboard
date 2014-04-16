@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Villasanti Francisco">
+
+    <title>Lancaster Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- <link href='http://fonts.googleapis.com/css?family=Fondamento' rel='stylesheet' type='text/css'> -->
+    <!--<link rel="stylesheet" href="http://getbootstrap.com/examples/sticky-footer/sticky-footer.css"> -->
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    <link href="stickyfooter.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="marco" class="container">
+
+      <div id="encab" class="container">
+          <h1 id="nombre"><strong>Lancaster Dashboard</strong></h1>
+          <img id="logo" src="LogoLancaster.png" class="img-responsive">
+
+       <!--  <h4 id="subtitulo">Institute of English</h4> -->
+      </div>
+
+      <div id="loaderContainer" class="container">
+      	<p>unos segundos...el sistema se está iniciando</p>
+      	 <img id="spin" src="loaderbar.gif">
+      </div>
+			
+
+          <form id="formulario" class="form-signin form-horizontal" role="form">
+            <h4 class="form-signin-heading">Ingresa tus credenciales</h4>
+            <input id="usuario" class="form-control" placeholder="tu nombre de usuario" required autofocus>
+            <input id="pass" type="password" class="form-control" placeholder="tu contraseña" required>
+            <button id="submitBt" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+            <div id="alcahuete" class="alert alert-info alert-dismissable collapse">Aca se va a ver si tu info de login es correcta</div>
+          </form>
+
+    </div> <!-- /container --> 
+    <div  id="menu" class="container collapse">
+    <p> ACa va el menu principal de carga de datossssss</p>
+
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center"><strong> &copy WorkCloud Systems.</strong> All rights reserved</p>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>  
+    <script src="iniciosesion.js"></script>
+    <script src="login.js"></script>
+    <script src="carga.js"></script>
+
+
+  </body>
+</html>

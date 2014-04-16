@@ -13,27 +13,9 @@ function Sesion(f,h,s){
 };
 
 function verifyCredentials(user,pwd, callback){
-	var transac  = baseDatos.transaction(["usuarios"],"readwrite");
-	var usuarios = transac.objectStore("usuarios");
-	var request = usuarios.get(user);
-	request.onsuccess = function(event){
-
-		if(request.result != undefined){
-			if((request.result.pass == pwd)){
-
-				callback(request.result, transac);
-			}else{
-				showErrMsg("No pasaste la verificacion");
-			}
-		}else{
-			showErrMsg("No pasaste la verificacion");
-		}
-
-	};
-
-	request.onerror = function (event){
-		showErrMsg("error de INDEXEDDB en verifyCredentials");
-	};
+	$.post("/jasperserver/rest/login", { j_username: user, j_password: pwd }, function( data ){
+		alert("datos server "+data);
+	});
 };
 
 
