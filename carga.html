@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Usuarios</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet"  href="carga.css">
+</head>
+
+<body>
+
+<div class="row">
+  <span class="col-xs-3 col-sm-3"></span>
+	<div class="col-xs-3 col-sm-3 container">
+	<form id="cargaUsuarios" class="form-horizontal" role="form">
+		<div class="form-group">
+      <div class="divTitle"><h4>Usuario Nuevo</h4></div>
+         <label for="pass">Nombre</label>
+   			 <input  class="form-control" id="usuario" placeholder="tu nombre de usuario">
+  		</div>
+		<div class="form-group">
+    		<label for="pass">contraseña</label>
+   			 <input type="password" class="form-control" id="pass" placeholder="tu password">
+  	</div>
+		<div class="form-group">
+    		<label for="email">Email</label>
+   			 <input  class="form-control" id="correoe" placeholder="tu email">
+  		</div>
+  		<button id="botonCargaUs"type="submit" class="btn btn-lg btn-primary btn-block">Agregar</button>
+     <div id="alcahuete" class="alert alert-info alert-dismissable collapse">
+       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+     </div>
+
+  	</form>
+	</div>
+	<div class=" col-xs-5  col-sm-5 container">
+      <div class="divTitle"><h4>Lista de Usuarios</h4></div>
+		<div class="table-responsive">
+  			<table  id="listaUsuarios" class="table">
+
+  				<thead>
+    			<tr>
+  					<th style="width:30em">Nombre usuario</th>
+  					<th style="width:30em">Password</th> 
+  					<th style="width:30em">email</th>
+            <th style="width:10em">Borrar</th>
+				</tr>  					
+  				</thead>
+
+				<tbody>
+					
+				</tbody>
+  			</table>
+		</div>	
+	</div>	
+<!--
+	<div class=" col-xs-4  col-sm-4 container">
+		<h4>Lista de sesiones</h4>
+		<div class="table-responsive">
+  			<table id="listaSesiones" class="table">
+    			<thead>
+    			<tr>
+  					<th>Fecha</th> 
+  					<th>Hora</th>
+  					<th>Sucursal</th>
+				</tr>    				
+    			</thead>
+
+				<tbody>
+					
+				</tbody>
+  			</table>
+		</div>
+	</div>	
+
+  -->
+</div>
+
+	
+	<script src="jquery-1.11.0.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script  src="controller.js"></script>
+    <script  src="carga.js"></script>
+      <script  src="iniciosesion.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+	background-color: #FFFFEB;
+}
+
+input {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+
+
+label {
+	font-size: 1.5em;
+}
+
+table {
+	max-width: 100%;
+}
+
+
+table tbody tr:hover {
+    background-color: #FFCC99;
+    cursor: pointer;
+}
+
+table thead {
+	font-size: 1em;
+}
+
+
+#listaUsuarios { 
+	 overflow-y:auto; 
+	 display:block;  
+}
+
+.container {
+
+	background-color: #FFFFEB;
+	border: 0.2em solid;
+	border-color: rgba(192,192,192,0.5);
+	border-radius: 0.5em;
+	box-shadow: 0.5em 0.5em 0.5em rgba(192,192,192,0.5);
+	margin: 1em 1em;
+	padding-bottom: 2em;
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+	padding-top: 2em;
+}
+
+.divTitle {
+    background-color: #CC0000;
+   	border: 0.2em solid;
+    border-color: #CC0000;
+	border-radius: 0.5em;
+	color: #FFFFFF;
+	margin: 0.5em 0.5em;
+	margin-bottom: 1em;
+	text-align: center;
+	text-shadow: 0.2em 0.2em 0.2em rgba(10,10,10,0.3);
+
+}

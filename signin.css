@@ -1,0 +1,88 @@
+ @font-face { font-family: Aldrich; src: url(Aldrich-Regular.ttf); }
+
+body {
+  margin-top: -4em;
+  background-color: #FFFFFB;
+
+}
+
+#encab {
+  max-height: 20%;
+  max-width: 100%;
+  text-align: center;
+  font-family: "Aldrich";
+  position: relative;
+}
+
+#footer {
+  background-color: #FFFFFB;
+  border: 2px solid;
+  border-color: rgba(192,192,192,0.5);
+
+}
+
+#loaderContainer {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+
+#nombre {
+  margin-bottom: 0.5em;
+}
+
+#submitBt{
+    background-color: #CC0000;
+    border-color: #CC0000;
+}
+
+#logo {
+  margin-bottom: 1.5em;
+  max-height: 150px;
+  display: inline;
+}
+
+.form-signin {
+
+  max-width: 330px;
+  max-height: 100%;
+  padding: 15px;
+  margin: 2em auto;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgba(192,192,192,0.5);
+  box-shadow: 0.3em 0.3em 1em rgba(182,182,182,0.5); 
+  position: relative;
+  text-align: center;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

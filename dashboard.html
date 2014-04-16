@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="bootstrap.min.css">    
+    <link rel="stylesheet" href="offcanvas.css">
+    <link rel="stylesheet" href="stickyfooter.css">
+    <link href="dashboard.css" rel="stylesheet">
+
+
+
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+ <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Lancaster Institute of English</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#">Salir</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div id="mainContainer" class="container">
+
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+<!--
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="">Listado Diario</a></li>
+            <li><a href="">Listado Deuda</a></li> 
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+               Ingresos <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a id="ingresosDetalle" href="">Detalle</a></li>
+                  <li id="ingresosResumen" ><a href="">Resumen</a></li>
+               </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+               Egresos <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                  <li><a href="">Detalle</a></li>
+                  <li><a href="">Resumen</a></li>
+               </ul>
+            </li>                
+          </ul>
+-->
+             <ul id="menuPpal" class="nav nav-pills nav-stacked">
+            <li class="active"><a >Home</a></li>
+             <li><a id="listaAlu" >Listado de Alumnos</a></li> 
+            <li><a >Listado Diario</a></li>
+            <li><a >Listado Deuda</a></li> 
+            <li>
+              <a data-toggle="collapse" data-parent="#menuPpal" href="#ingresoSubmenu">
+               Ingresos <span class="caret"></span>
+               </a>
+               <div id="ingresoSubmenu" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                      <ul  class="nav nav-pills nav-stacked" >
+                      <li id="ingresosDetalle"><a  href=""> Detalle</a></li>
+                      <li id="ingresosResumen" ><a  href="">Resumen</a></li>
+                      </ul>
+                  </div>
+                </div>
+            </li>
+            <li >
+              <a data-toggle="collapse" data-parent="#menuPpal" href="#egresoSubmenu">
+               Egresos <span class="caret"></span>
+               </a>
+
+               <div id="egresoSubmenu" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                      <ul  class="nav nav-pills nav-stacked" >
+                      <li  id="egresosDetalle" ><a href="" >Detalle</a></li>
+                      <li id="egresosResumen" ><a  href="">Resumen</a></li>
+                      </ul>
+                  </div>
+                </div>
+            </li>      
+          </ul>  
+
+
+        </div><!--/span-->
+       
+         <div class="col-xs-12 col-sm-8">
+
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+
+
+          <div id="ctrlResumenIngreso" class="col-xs-12 col-sm-9 container collapse">
+
+           <form id="formResumenIngresos" class="col-xs-12 col-sm-12 form-inline" role="form">
+              <div class="form-group form-inline">
+                <label for="mesInput">Mes de consulta</label>
+                 <input type="month" class="form-control" id="mesInput">
+             </div>
+                 <button type="submit" class="btn btn-default">Listo</button>
+          </form>
+
+          </div>
+
+          <div id="ctrlDetalleIngreso" class="col-xs-12 col-sm-9 container collapse">
+
+            <form class="col-xs-12 col-sm-12 form-inline" role="form">
+                <div class="form-group form-inline">
+                  <label for="mesInput">Fecha de la consulta</label>
+                  <input type="date" class="form-control" id="mesInput">
+                </div>
+                <button type="submit" class="btn btn-default">Listo</button>
+            </form>
+
+          </div>
+          <div id="ctrlListaAlu" class="col-xs-12 col-sm-9 container collapse">
+
+            <form id="formListaAlu" class="col-xs-12 col-sm-12 form-inline" role="form">
+                <div class="form-group form-inline">
+                <h4>Alumnos activos</h4>
+                  <label for="mesInput">Fecha de la consulta</label>
+                  <input type="date" class="form-control" id="mesInput">
+                </div>
+                <button type="submit" class="btn btn-default">Listo</button>
+            </form>
+
+          </div>
+
+          <div id="contenido" class="col-xs-12 col-sm-12 container">
+
+              <div id="homePan" class="jumbotron">
+                <h1>Report Dashboard</h1>
+                 <p>Elegí un informe del menú que quieras ver</p>
+              </div>
+               <canvas id="visor" class="collapse" style="border:1px solid black;"/>
+             <!-- <iframe id="visor" class="collapse" src="http://institutolancaster.com"></iframe> -->
+          </div>
+
+        </div><!--/span-->
+
+      </div><!--/row-->
+
+    </div><!--/.container-->
+
+    <hr>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted text-center"><strong> &copy WorkCloud Systems.</strong> All rights reserved</p>
+      </div>
+    </div>
+      
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>  
+    <script src="offcanvas.js" ></script>
+    <script src="dashboard.js"></script>
+    <script src="http://raw.githubusercontent.com/mozilla/pdf.js/master/src/pdf.js"></script>
+  </body>
+</html>
