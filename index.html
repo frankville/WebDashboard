@@ -30,7 +30,28 @@
   </head>
 
   <body>
-
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Dashboard</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul id="navbarUsuario" class="nav navbar-nav navbar-right collapse">
+                
+                <li>
+                  <a id="nomUsuario"><img id="imgUsuario" class="img-responsive" src="LogoLancaster.png"> Lancaster</a>
+             </li>
+                <li><a href="#">Salir</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
     <div id="marco" class="container">
 
       <div id="encab" class="container">
@@ -56,7 +77,109 @@
 
     </div> <!-- /container --> 
     <div  id="menu" class="container collapse">
-    <p> ACa va el menu principal de carga de datossssss</p>
+        <!-- Fixed navbar -->
+
+    <div id="mainContainer" class="container">
+
+      <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+             <ul id="menuPpal" class="nav nav-pills nav-stacked">
+            <li class="active"><a >Home</a></li>
+             <li><a id="listaAlu" >Listado de Alumnos</a></li> 
+            <li><a >Listado Diario</a></li>
+            <li><a >Listado Deuda</a></li> 
+            <li>
+              <a data-toggle="collapse" data-parent="#menuPpal" href="#ingresoSubmenu">
+               Ingresos <span class="caret"></span>
+               </a>
+               <div id="ingresoSubmenu" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                      <ul  class="nav nav-pills nav-stacked" >
+                      <li id="ingresosDetalle"><a href="#"> Detalle</a></li>
+                      <li id="ingresosResumen" ><a href="#">Resumen</a></li>
+                      </ul>
+                  </div>
+                </div>
+            </li>
+            <li >
+              <a data-toggle="collapse" data-parent="#menuPpal" href="#egresoSubmenu">
+               Egresos <span class="caret"></span>
+               </a>
+
+               <div id="egresoSubmenu" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                      <ul  class="nav nav-pills nav-stacked" >
+                      <li  id="egresosDetalle" ><a >Detalle</a></li>
+                      <li id="egresosResumen" ><a >Resumen</a></li>
+                      </ul>
+                  </div>
+                </div>
+            </li>      
+          </ul>  
+
+
+        </div><!--/span-->
+       
+         <div class="col-xs-12 col-sm-8">
+
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Menu</button>
+          </p>
+
+
+          <div id="ctrlResumenIngreso" class="col-xs-12 col-sm-9 container collapse">
+
+           <form id="formResumenIngresos" class="col-xs-12 col-sm-12 form-inline" role="form">
+              <div class="form-group form-inline">
+                <label for="mesInput">Mes de consulta</label>
+                 <input type="month" class="form-control" id="mesInput">
+             </div>
+                 <button type="submit" class="btn btn-default">Listo</button>
+          </form>
+
+          </div>
+
+          <div id="ctrlDetalleIngreso" class="col-xs-12 col-sm-9 container collapse">
+
+            <form class="col-xs-12 col-sm-12 form-inline" role="form">
+                <div class="form-group form-inline">
+                  <label for="mesInput">Fecha de la consulta</label>
+                  <input type="date" class="form-control" id="mesInput">
+                </div>
+                <button type="submit" class="btn btn-default">Listo</button>
+            </form>
+
+          </div>
+          <div id="ctrlListaAlu" class="col-xs-12 col-sm-9 container collapse">
+
+            <form id="formListaAlu" class="col-xs-12 col-sm-12 form-inline" role="form">
+                <div class="form-group form-inline">
+                <h4>Alumnos activos</h4>
+                  <label for="mesInput">Fecha de la consulta</label>
+                  <input type="date" class="form-control" id="mesInput">
+                </div>
+                <button type="submit" class="btn btn-default">Listo</button>
+            </form>
+
+          </div>
+
+          <div id="contenido" class="col-xs-12 col-sm-12 container">
+
+              <div id="homePan" class="jumbotron">
+                <h1>Report Dashboard</h1>
+                 <p>Elegí un informe del menú que quieras ver</p>
+              </div>
+               <canvas id="visor" class="collapse" style="border:1px solid black;"/>
+             <!-- <iframe id="visor" class="collapse" src="http://institutolancaster.com"></iframe> -->
+          </div>
+
+        </div><!--/span-->
+
+      </div><!--/row-->
+
+    </div><!--/.container-->
 
     </div>
     
@@ -75,6 +198,8 @@
     <script src="iniciosesion.js"></script>
     <script src="login.js"></script>
     <script src="carga.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="dashboard.js"></script>
 
 
   </body>

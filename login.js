@@ -26,10 +26,10 @@ var datosLogin = function  (nomus, passus) {
 };
 
 function  loggedIn(){
-		alert("entra aca");
-
 		$("#marco").fadeOut("fast",function () {
 			$("#menu").fadeIn("fast");
+			$("#navbarUsuario").fadeIn("fast");
+
 		});
 
 		showSuccessMsg("Exito! tu usuario y password son validos");

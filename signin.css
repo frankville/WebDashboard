@@ -1,7 +1,6 @@
- @font-face { font-family: Aldrich; src: url(Aldrich-Regular.ttf); }
+
 
 body {
-  margin-top: -4em;
   background-color: #FFFFFB;
 
 }
@@ -10,15 +9,31 @@ body {
   max-height: 20%;
   max-width: 100%;
   text-align: center;
-  font-family: "Aldrich";
+  font-family: "Helvetica";
   position: relative;
 }
 
+
+
 #footer {
-  background-color: #FFFFFB;
+  background-color;
+  border: 0.5em solid;
+  border-color: #FFFFFB;
+  border-radius: 1em;
   border: 2px solid;
   border-color: rgba(192,192,192,0.5);
 
+}
+
+#imgUsuario {
+
+  background: white;
+  border: 0.2em solid;
+  border-color: white;
+  border-radius: 0.2em;
+  display: inline;
+  max-height: 1.8em;
+  max-width: 1.8em;
 }
 
 #loaderContainer {
@@ -28,9 +43,13 @@ body {
   width: 100%;
 }
 
-
 #nombre {
   margin-bottom: 0.5em;
+}
+
+#nomUsuario {
+  font-weight: bold;
+  display: inline-block;
 }
 
 #submitBt{

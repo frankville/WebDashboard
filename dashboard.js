@@ -20,23 +20,15 @@ function showControlPanel(){
 
 }
 
-function loginRequest(){
-	$.post("/jasperserver/rest/login",{ j_username: "lancaster"; j_password="lancaster"}, function( data ){
-		alert("mensaje de jasperserver "+data);
-	});
-}
 
-
-function getListaAlu(){
+function getListaAlu(params){
 
 		$.ajax ({
 		type: "GET",
-		url: "http://localhost/",
+		url: "/jasperserver/rest_v2/reports",
 		//contentType: "application/json; charset=utf-8",
 		dataType: "json",
-		data: {
-			jsonObj: JSON.stringify(sesion)
-		},
+		data: params,
 		success: function (data, status, jqXHR) {
 			darRespuesta(data.status);
 		},

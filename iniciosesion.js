@@ -1,3 +1,4 @@
+var sessionID = "";
 $(document).ready(function(){
 	$("#cargaSesiones").submit(function(event){
 		event.preventDefault();
@@ -13,10 +14,37 @@ function Sesion(f,h,s){
 };
 
 function verifyCredentials(user,pwd, callback){
-	$.post("/jasperserver/rest/login", { j_username: user, j_password: pwd }, function( data ){
-		alert("datos server "+data);
+	/*
+	$.post("/jasperserver/rest/login",).
+	done(function(data){
+		sessionID = $.cookie("JSESSIONID");
+		alert("datos server "+$.cookie("JSESSIONID")+" data "+data);
 	});
-};
+
+*/
+	var response = 	$.ajax ({
+		type: "GET",
+		url: "/jasperserver/rest/login",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		dataType: "xml",
+		data:  { j_username: user, j_password: pwd },
+		success: function(data, status, jqXHR){
+				loggedIn();
+		},
+		error: function(xhrequest, ErrorText, thrownError) {
+			var msg = "";
+			switch(xhrequest.status){
+				case 401: msg =  "El nombre de usuario y/o contraseña no son correctos";
+				break;
+				default: msg = "Error "+ErrorText+": "+thrownError;
+			};
+
+			showErrMsg(msg);
+            
+        }
+	});
+
+}
 
 
 function addSesion(usuario,transac) {
