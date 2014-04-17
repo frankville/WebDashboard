@@ -17,7 +17,7 @@
     <link href="signin.css" rel="stylesheet">
     <link href="stickyfooter.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="jquery-ui/css/ui-darkness/jquery-ui-1.10.4.custom.min.css">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -87,7 +87,7 @@
 
              <ul id="menuPpal" class="nav nav-pills nav-stacked">
             <li class="active"><a >Home</a></li>
-             <li><a id="listaAlu" >Listado de Alumnos</a></li> 
+             <li><a id="listaAlu" href="" >Listado de Alumnos</a></li> 
             <li><a >Listado Diario</a></li>
             <li><a >Listado Deuda</a></li> 
             <li>
@@ -134,9 +134,9 @@
            <form id="formResumenIngresos" class="col-xs-12 col-sm-12 form-inline" role="form">
               <div class="form-group form-inline">
                 <label for="mesInput">Mes de consulta</label>
-                 <input type="month" class="form-control" id="mesInput">
+                 <input type="month"  class="form-control" id="mesInput">
              </div>
-                 <button type="submit" class="btn btn-default">Listo</button>
+                 <button type="submit" class="btn btn-primary btn-default">Listo</button>
           </form>
 
           </div>
@@ -146,24 +146,27 @@
             <form class="col-xs-12 col-sm-12 form-inline" role="form">
                 <div class="form-group form-inline">
                   <label for="mesInput">Fecha de la consulta</label>
-                  <input type="date" class="form-control" id="mesInput">
+                  <input type="datetime-local" name ="mesInput" class="form-control" id="mesInput">
                 </div>
                 <button type="submit" class="btn btn-default">Listo</button>
             </form>
 
           </div>
+
+
           <div id="ctrlListaAlu" class="col-xs-12 col-sm-9 container collapse">
 
-            <form id="formListaAlu" class="col-xs-12 col-sm-12 form-inline" role="form">
-                <div class="form-group form-inline">
+            <form id="formListaAlu" class="form-inline" role="form">
                 <h4>Alumnos activos</h4>
-                  <label for="mesInput">Fecha de la consulta</label>
-                  <input type="date" class="form-control" id="mesInput">
-                </div>
-                <button type="submit" class="btn btn-default">Listo</button>
+                  <label for="fechaInput">Fecha de la consulta</label>
+                  <input type="date" class="form-control" id="fechaInput">
+                <button type="submit" class="btn btn-lg btn-primary">Listo</button>
             </form>
-
+            <div id="loaderDiv"><p>Un momento, generando el reporte...<img src="loaderbar.gif"></p></div>
           </div>
+
+
+
 
           <div id="contenido" class="col-xs-12 col-sm-12 container">
 
@@ -194,12 +197,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery-1.11.0.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>  
+    <script src="bootstrap/js/bootstrap.min.js"></script> 
+        <script src="pdf.js"></script>
+ 
     <script src="iniciosesion.js"></script>
     <script src="login.js"></script>
     <script src="carga.js"></script>
-    <script src="jquery.cookie.js"></script>
     <script src="dashboard.js"></script>
+
 
 
   </body>

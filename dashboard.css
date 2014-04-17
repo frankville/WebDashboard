@@ -3,10 +3,7 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    background-color: #FFFFFB;
-    padding-top: 70px;
-}
+
  
 canvas {
   border: 2px solid;
@@ -32,8 +29,16 @@ canvas {
   width: 100%;
 }
 
+#formListaAlu {
+   display: inline;
+}
+
 #insignia {
   margin-right: 0.4em;
+}
+
+#loaderDiv {
+  display: none;
 }
 
 #logodashboard {
