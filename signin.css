@@ -3,7 +3,6 @@
 body {
   background-color: #FFFFFB;
   padding-top: 5em;
-
 }
 
 #encab {
@@ -53,10 +52,6 @@ body {
   display: inline-block;
 }
 
-#submitBt{
-    background-color: #CC0000;
-    border-color: #CC0000;
-}
 
 #logo {
   margin-bottom: 1.5em;

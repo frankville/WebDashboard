@@ -13,6 +13,13 @@ canvas {
 
 }
 
+form label {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+
+
 #contenido {
   width: 100%;
   height: 100%;
@@ -29,8 +36,17 @@ canvas {
   width: 100%;
 }
 
+
+
 #formListaAlu {
    display: inline;
+   width: 100%;
+}
+
+.unInput {
+  font-size: 1.5em;
+  margin: 1em;
+
 }
 
 #insignia {
@@ -46,8 +62,7 @@ canvas {
 }
 
 #mainContainer {
-  width: 100%;
-  height: 100%;
+  position: relative;
   max-height: 700px;
 }
 
@@ -156,4 +171,6 @@ canvas {
 
 #visor {
   display: none;
+  width: 100%;
+  height: 100%;
 }
