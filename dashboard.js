@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
 	$("#listaAlu").click(function (event){
 		showControlPanel();
 	});
@@ -18,6 +20,14 @@ $(document).ready(function(){
  		};
 
  		getListaAlu(params);
+	});
+
+	$("#dologout").click(function(event){
+		event.preventDefault();
+		$.get("/logout", function(resp){
+			loggedOut();//function from login.js
+
+		});
 	});
 });
 

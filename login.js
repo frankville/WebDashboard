@@ -2,6 +2,14 @@
 var sesion = null;
 
 $(document).ready(function(){
+		$.get("/isLogged", function(currUser){
+		if(currUser != ""){
+			loggedIn(currUser);
+			clearLoginForm();
+		}else{
+					loggedOut();//function from login.js
+		}
+	});
 
 	$("#loaderContainer").fadeOut("fast");
 });
@@ -15,8 +23,15 @@ $("#pass").keyup(function(){
 });
 $("#formulario").submit(function(event){
 	event.preventDefault();
-		verifyCredentials($("#usuario").val(),$("#pass").val(), addSesion);
+		var creds = new Object();
+		creds.username = $("#usuario").val();
+		creds.password = $("#pass").val();
 
+		$.post("/login", creds, function(usern){
+			console.log("wep! "+usern);
+			loggedIn(usern);
+			clearLoginForm();
+		});
 
 });
 
@@ -25,14 +40,22 @@ var datosLogin = function  (nomus, passus) {
 	this.j_password = passus;
 };
 
-function  loggedIn(){
+function  loggedIn(username){
+	console.log("curr user! "+username);
 		$("#marco").fadeOut("fast",function () {
 			$("#menu").fadeIn("fast");
 			$("#navbarUsuario").fadeIn("fast");
-
 		});
-
+		$("#currUser").text(username);
 		showSuccessMsg("Exito! tu usuario y password son validos");
+};
+
+function  loggedOut(){
+		$("#marco").fadeIn("fast",function () {
+			$("#menu").fadeOut("fast");
+			$("#navbarUsuario").fadeOut("fast");
+			$("#nomUsuario").text("");
+		});
 };
 
 function showSuccessMsg(msg){
@@ -62,3 +85,10 @@ function showErrMsg(msg){
 		$("#alcahuete").removeClass("collapse");
 		$("#alcahuete").addClass("alert-danger");
 }
+
+	function clearLoginForm(){
+			$("#usuario").val("");
+			$("#pass").val("");
+			$("#alcahuete").fadeOut("fast");
+			$("#currUser").val("");
+	};

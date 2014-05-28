@@ -42,6 +42,9 @@ body {
   width: 100%;
 }
 
+#marco {
+  display: none;
+}
 
 #nombre {
   margin-bottom: 0.5em;
