@@ -1,6 +1,9 @@
 $(document).ready(function(){
-
-
+	/*
+	$("#visor").load(function(){
+		hideLoadingBar();
+	});
+*/
 	$("#listaAlu").click(function (event){
 		showControlPanel();
 	});
@@ -58,8 +61,8 @@ $.get("/jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf
 });
 */
 	//var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
-		var url = "lista_alumnos";
+		var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_Alumnos.pdf";
 
-	$("#visor").attr("src","/Viewer.js/../"+url);
+	$("#visor").attr("src","/ViewerJS/#../jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_Alumnos.pdf");
 
 }
