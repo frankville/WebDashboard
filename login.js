@@ -2,6 +2,7 @@
 var sesion = null;
 
 $(document).ready(function(){
+	/*
 		$.get("/isLogged", function(currUser){
 		if(currUser != ""){
 			loggedIn(currUser);
@@ -10,7 +11,16 @@ $(document).ready(function(){
 					loggedOut();//function from login.js
 		}
 	});
-
+		*/
+		var uname = $.cookie('jusername');
+		console.log(uname);
+		if(uname === "null"){
+			loggedOut();
+			
+		}else{
+			loggedIn(uname);
+			clearLoginForm();
+		};
 	$("#loaderContainer").fadeOut("fast");
 });
 
@@ -23,14 +33,23 @@ $("#pass").keyup(function(){
 });
 $("#formulario").submit(function(event){
 	event.preventDefault();
+	$("#loadermsg").text("unos segundos, inciando sesion");
+	$("#loaderContainer").fadeIn("fast");
 		var creds = new Object();
-		creds.username = $("#usuario").val();
-		creds.password = $("#pass").val();
+		creds.j_username = $("#usuario").val();
+		creds.j_password = $("#pass").val();
 
-		$.post("/login", creds, function(usern){
-			console.log("wep! "+usern);
-			loggedIn(usern);
+		$.post("/jasperserver/rest/login", creds, function(){
+			$.cookie('jusername',creds.j_username);
+			loggedIn(creds.j_username);
 			clearLoginForm();
+			$("#loaderContainer").fadeOut("fast");
+		}).fail(function(){
+			clearLoginForm();
+			showErrMsg("usuario/clave incorrecta");
+			$("#loaderContainer").fadeOut("fast");
+
+			
 		});
 
 });

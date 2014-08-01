@@ -24,8 +24,11 @@ $(document).ready(function(){
 
 	$("#dologout").click(function(event){
 		event.preventDefault();
-		$.get("/logout", function(resp){
+		$("#myModal").modal("show");
+		$.get("/jasperserver/logout.html?showPasswordChange=null", function(resp){
+			$.cookie("jusername",null);
 			loggedOut();//function from login.js
+			$("#myModal").modal("hide");
 
 		});
 	});
@@ -54,8 +57,9 @@ $.get("/jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf
 
 });
 */
-	var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
-	$("#visor").attr("src","/Viewer.js/../"+url);
+	//var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
+		var url = "lista_alumnos";
 
+	$("#visor").attr("src","/Viewer.js/../"+url);
 
 }
