@@ -5,7 +5,13 @@ $(document).ready(function(){
 	});
 */
 	$("#listaAlu").click(function (event){
-		showControlPanel();
+		showListaAlumnosControlPanel();
+	});
+	$("#listaDiario").click(function (event){
+		showListaDiarioControlPanel();
+	});
+	$("#listaDeuda").click(function (event){
+		showListaDeudaControlPanel();
 	});
 
 	$("#formResumenIngresos").submit(function( event ){
@@ -25,6 +31,16 @@ $(document).ready(function(){
  		getListaAlu(params);
 	});
 
+	$("#formListaDeuda").submit(function( event ){
+		event.preventDefault();
+ 		$("#loaderDiv").fadeIn("fast");
+ 		var params = {
+ 			year: $("#yearInput").val().toString()
+ 		};
+
+ 		getListaDeuda(params);
+	});
+
 	$("#dologout").click(function(event){
 		event.preventDefault();
 		$("#myModal").modal("show");
@@ -37,11 +53,38 @@ $(document).ready(function(){
 	});
 });
 
-function showControlPanel(){
+function showListaAlumnosControlPanel(){
 		event.preventDefault();
-		$("#homePan").fadeOut("fast");
-		$("#ctrlListaAlu").fadeIn("slow");
-		$("#visor").fadeIn("slow");
+		hideAllPanels(function(){
+			$("#ctrlListaAlu").fadeIn("slow");
+			$("#visor").fadeIn("slow");
+		});
+
+}
+
+function showListaDiarioControlPanel(){
+		event.preventDefault();
+		hideAllPanels(function(){
+			$("#ctrlListaDiario").fadeIn("slow");
+			$("#visor").fadeIn("slow");
+		});
+}
+
+function showListaDeudaControlPanel(){
+		event.preventDefault();
+		hideAllPanels(function(){
+			$("#ctrlListaDeuda").fadeIn("slow");
+			$("#visor").fadeIn("slow");
+		});
+}
+
+
+function hideAllPanels(callback){
+	$("#homePan").fadeOut("fast");
+	$("#ctrlListaAlu").fadeOut("fast");
+	$("#ctrlListaDiario").fadeOut("fast");
+	$("#ctrlListaDeuda").fadeOut("fast");
+	callback();
 }
 
 function hideLoadingBar(){
@@ -50,19 +93,23 @@ function hideLoadingBar(){
 
 
 function getListaAlu(params){
-/*
-$.get("/jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf",params,function( data ){
-	var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
-		console.log(url);
-			$("#visor").attr("src","/Viewer.js/../"+url);
+
+$.get("/jasperserver/rest_v2/reports/reports/ListaAlumnos/ListaAlumnos.html").done(function(data){
+		//var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
+			$("#visor").attr("srcdoc",data);
 			 		$("#loaderDiv").fadeOut("fast");
-
-
 });
-*/
-	//var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
-		var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_Alumnos.pdf";
 
-	$("#visor").attr("src","/ViewerJS/#../jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_Alumnos.pdf");
+
+}
+
+function getListaDeuda(params){
+
+$.get("/jasperserver/rest_v2/reports/reports/DeudaLancaster/DeudaLancaster.html",params).done(function(data){
+		//var url = "jasperserver/rest_v2/reports/reports/ListaAlumnos/Listado_de_Alumnos.pdf?fechaconsulta="+params.fechaconsulta+"&suc="+params.suc;
+			$("#visor").attr("srcdoc",data);
+			 		$("#loaderDiv").fadeOut("fast");
+});
+
 
 }

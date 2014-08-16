@@ -14,7 +14,7 @@ $(document).ready(function(){
 		*/
 		var uname = $.cookie('jusername');
 		console.log(uname);
-		if(uname === "null"){
+		if(uname == null){
 			loggedOut();
 			
 		}else{
